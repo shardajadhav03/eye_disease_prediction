@@ -6,7 +6,6 @@ This project utilizes a convolutional neural network (CNN) model based on DenseN
 - [Overview](#overview)
 - [Dataset](#dataset)
 - [Installation](#installation)
-- [Project Structure](#project-structure)
 - [Model Architecture](#model-architecture)
 - [Training the Model](#training-the-model)
 - [Results](#results)
@@ -34,24 +33,21 @@ The dataset is sourced from Kaggle:
    cd eye-disease-prediction
 
 2. **Install Required Libraries:**
+   ```bash
    pip install -r requirements.txt
 3. **Download the Dataset:** Use the Kaggle API to download the dataset:
+   ```bash
    !mkdir -p ~/.kaggle
    !cp kaggle.json ~/.kaggle/
    !chmod 600 ~/.kaggle/kaggle.json
    !kaggle datasets download -d gunavenkatdoddi/eye-diseases-classification
 
 4. **Unzip the Dataset:**
+   ```bash
    import zipfile
    with zipfile.ZipFile('eye-diseases-classification.zip', 'r') as zip_ref:
        zip_ref.extractall('eye-diseases-val')
-## Project Structure
-eye-disease-prediction/
-├── data/               # Folder containing dataset images
-├── models/             # Saved models
-├── src/                # Source code for data loading, model, and evaluation
-├── requirements.txt    # Required libraries
-└── README.md           # Project documentation
+
 
 ## Model Architecture
 The model is built on a pre-trained DenseNet121 model, which has been adapted to the four output classes for this dataset. The architecture includes:
